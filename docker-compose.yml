@@ -1,0 +1,17 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  node-api:
+    container_name: node-api
+    hostname: node-api
+    image: node-api:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - DB_HOST=host.docker.internal
+      - DB_USER=root
+      - DB_PASSWORD=pipoca150
+      - DB_NAME=nodeTeste
+      - JWT_SECRET=mySecretKeyJwt
