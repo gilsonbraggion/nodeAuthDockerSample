@@ -1,0 +1,37 @@
+
+docker build -t node-api-sample:latest .
+
+cd ../../ImagensDocker
+docker save node-api-sample:latest > node-api-sample.tar
+
+scp node-api-sample.tar root@gilsonbraggion.com.br:~
+
+ssh root@gilsonbraggion.com.br
+
+docker load < node-api-sample.tar
+
+cd /root/gilson
+docker compose up -d --build
+
+
+
+
+
+# Rodar a imagem local.
+docker run -p 8083:8083 grm-payable:latest
+
+
+# Ip Servidor HostMf
+213.218.234.182
+
+
+# Conectar ao mysql local
+ssh -L 3307:localhost:3307 root@gilsonbraggion.com.br
+
+
+
+kill -9 $(lsof -i:8083)
+
+netstat -ano | findStr 8083
+
+taskkill /F /PID 3312

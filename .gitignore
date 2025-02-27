@@ -1,0 +1,10 @@
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+package-lock.json
+yarn.lock
+node_modules
+dist
+build
+
+/node_modules
