@@ -14,15 +14,17 @@ connectDB();
 const app = express();
 app.use(express.json());
 
-app.use('/node-api-sample/api/auth', authRoutes);
-app.use('/node-api-sample/api/customers', customerRoutes);
+let context = '/node-api-sample';
+
+app.use(context + '/api/auth', authRoutes);
+app.use(context + '/api/customers', customerRoutes);
 
 // Use the router with the base path
-app.use("/node-api-sample", myAppRouter);
+app.use(context, myAppRouter);
 
 // Define a sample route under /my-app
 myAppRouter.get("/", (req, res) => {
-    res.send("Welcome to Node Auth Sample!");
+    res.send("Welcome to Node Auth Sample Alterado!");
   });
 
 const PORT = process.env.PORT || 3001;
