@@ -1,4 +1,3 @@
-
 docker build -t node-api-sample:latest .
 
 cd ../../ImagensDocker
@@ -9,8 +8,8 @@ scp node-api-sample.tar root@gilsonbraggion.com.br:~
 ssh root@gilsonbraggion.com.br
 
 docker load < node-api-sample.tar
-
 cd /root/gilson
+
 docker compose up -d --build
 
 

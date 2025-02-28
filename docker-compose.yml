@@ -2,10 +2,10 @@
 version: '3.8'
 
 services:
-  node-api:
-    container_name: node-api
-    hostname: node-api
-    image: node-api:latest
+  node-api-sample:
+    container_name: node-api-sample
+    hostname: node-api-sample
+    image: node-api-sample:latest
     ports:
       - "3001:3001"
     environment:
